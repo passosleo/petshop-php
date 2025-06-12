@@ -1,0 +1,251 @@
+:root {
+    --primary-color: #FF8C42;
+    --secondary-color: #FFD07B;
+    --background-color: #FFF8F1;
+    --button-hover: #e67e22;
+    --text-color: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+}
+
+.login-wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+}
+
+.container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    text-align: center;
+    border: 2px solid var(--secondary-color);
+}
+
+.icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 140, 66, 0.4);
+}
+
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--button-hover);
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.link {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.paw {
+    font-size: 30px;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+/* ===== Dashboard ===== */
+.inicio {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inicio header {
+    background-color: white;
+    color: var(--text-color);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    flex-shrink: 0;
+    border-bottom: 2px solid var(--secondary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.inicio .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.inicio .user-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.inicio .user-area span {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.inicio .logout {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.inicio .logout:hover {
+    background-color: var(--button-hover);
+}
+
+.inicio .layout {
+    display: flex;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.inicio .sidebar {
+    background-color: white;
+    width: 220px;
+    padding: 16px;
+    border-right: 2px solid var(--secondary-color);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+}
+
+.inicio .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.inicio .sidebar li {
+    margin-bottom: 15px;
+}
+
+.inicio .sidebar a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+.inicio .sidebar a:hover {
+    background-color: rgba(255, 140, 66, 0.1);
+}
+
+.inicio .content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.inicio .content h1 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.inicio .content p {
+    font-size: 16px;
+}
+
+.sidebar ul li a.ativo {
+    background-color: rgba(255, 140, 66, 0.15);
+    color: var(--primary-color);
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 14px;
+    transition: 0.2s;
+}
+
+.pagina-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.add-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    width: fit-content;
+    align-self: flex-end;
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background: var(--button-hover);
+}
