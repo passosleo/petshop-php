@@ -1,10 +1,10 @@
 <?php
-	require("conecta_db.php");
+	require("../../db/conexao.php");
 	session_start();
 
 	if (!isset($_POST['nome'], $_POST['email'], $_POST['senha'])) {
 		$_SESSION["erro"] = "Parâmetros incorretos";
-		header("location: /trabalho_final_pet/cadastro.php");
+		header("location: /registrar.php");
 		exit;
 	}
 
@@ -17,7 +17,7 @@
 
 	if (mysqli_num_rows($resultado) > 0) {
 		$_SESSION["erro"] = "E-mail já cadastrado";
-		header("location: /trabalho_final_pet/cadastro.php");
+		header("location: /registrar.php");
 		exit;
 	}
 
@@ -27,9 +27,9 @@
 
 	if (mysqli_query($conn, $sql_cadastro)) {
 		$_SESSION["sucesso"] = "Cadastro realizado com sucesso!";
-		header("location: /trabalho_final_pet/login.php");
+		header("location: /login.php");
 	} else {
 		$_SESSION["erro"] = "Erro ao cadastrar usuário";
-		header("location: /trabalho_final_pet/cadastro.php");
+		header("location: /registrar.php");
 	}
 ?>

@@ -1,10 +1,10 @@
 <?php
-	require("conecta_db.php");
+	require("../../db/conexao.php");
 	session_start();
 
 	if (!isset($_POST['email'], $_POST['senha'])) {
 		$_SESSION["erro"] = "Usuário ou senha incorretos";
-		header("location: /trabalho_final_pet/login.php");
+		header("location: /login.php");
 		exit;
 	}
 
@@ -20,12 +20,12 @@
 		if (password_verify($senha, $usuario["senha"])) {
 			$_SESSION["email"] = $usuario["email"];
 			$_SESSION["nome"] = $usuario["nome"];
-			header("location: /trabalho_final_pet/index.php");
+			header("location: /dashboard.php");
 			exit;
 		}
 	}
 
 	$_SESSION["erro"] = "Usuário ou senha incorretos";
-	header("location: /trabalho_final_pet/login.php");
+	header("location: /login.php");
 	exit;
 ?>

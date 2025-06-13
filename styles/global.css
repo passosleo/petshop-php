@@ -108,14 +108,14 @@ button:hover {
 }
 
 /* ===== Dashboard ===== */
-.inicio {
+.page {
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.inicio header {
+.page header {
     background-color: white;
     color: var(--text-color);
     padding: 15px 30px;
@@ -128,24 +128,24 @@ button:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.inicio .logo {
+.page .logo {
     font-size: 28px;
     font-weight: bold;
     color: var(--primary-color);
 }
 
-.inicio .user-area {
+.page .user-area {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.inicio .user-area span {
+.page .user-area span {
     font-size: 16px;
     color: var(--text-color);
 }
 
-.inicio .logout {
+.page .logout {
     padding: 8px 16px;
     background-color: var(--primary-color);
     color: white;
@@ -155,17 +155,17 @@ button:hover {
     transition: background-color 0.3s;
 }
 
-.inicio .logout:hover {
+.page .logout:hover {
     background-color: var(--button-hover);
 }
 
-.inicio .layout {
+.page .layout {
     display: flex;
     flex-grow: 1;
     min-height: 0;
 }
 
-.inicio .sidebar {
+.page .sidebar {
     background-color: white;
     width: 220px;
     padding: 16px;
@@ -174,17 +174,17 @@ button:hover {
     flex-shrink: 0;
 }
 
-.inicio .sidebar ul {
+.page .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.inicio .sidebar li {
+.page .sidebar li {
     margin-bottom: 15px;
 }
 
-.inicio .sidebar a {
+.page .sidebar a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: bold;
@@ -195,24 +195,28 @@ button:hover {
     font-size: 15px;
 }
 
-.inicio .sidebar a:hover {
+.page .sidebar a:hover {
     background-color: rgba(255, 140, 66, 0.1);
 }
 
-.inicio .content {
+.page .content {
     flex-grow: 1;
     padding: 30px;
     background-color: white;
     overflow-y: auto;
 }
 
-.inicio .content h1 {
+.page .content section {
+    margin-top: 2rem;
+}
+
+.page .content h1 {
     color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 15px;
 }
 
-.inicio .content p {
+.page .content p {
     font-size: 16px;
 }
 
@@ -225,7 +229,7 @@ button:hover {
     transition: 0.2s;
 }
 
-.pagina-container {
+.page-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -248,4 +252,79 @@ button:hover {
 
 .add-button:hover {
     background: var(--button-hover);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.btn-actions {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-editar {
+    background-color: #3498db;
+}
+
+.btn-editar:hover {
+    background-color: #2980b9;
+}
+
+.btn-excluir {
+    background-color: #e74c3c;
+}
+
+.btn-excluir:hover {
+    background-color: #c0392b;
+}
+
+.sem-dados {
+    padding: 1rem;
+    background-color: #fff5e8;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    color: #555;
+}
+
+.list-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 1.5rem;
+    table-layout: fixed;
+}
+
+.list-table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.list-table th, .list-table td {
+    padding: 14px;
+    text-align: left;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.list-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.list-table tbody tr:hover {
+    background-color: rgba(255, 140, 66, 0.08);
+}
+
+.list-table td {
+    color: var(--text-color);
 }
