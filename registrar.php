@@ -26,16 +26,7 @@
                 <input id="confirmar_senha" type="password" name="confirmar_senha" placeholder="Confirmar senha" required>
                 <p id="senha_erro" class="error" style="display: none;">As senhas não coincidem.</p>
                 <button type="submit">Cadastrar</button>
-                <?php
-                    if (isset($_SESSION["erro"])) {
-                        echo '<p class="error">' . $_SESSION["erro"] . '</p>';
-                        unset($_SESSION["erro"]);
-                    }
-                    if (isset($_SESSION["sucesso"])) {
-                        echo '<p class="success">' . $_SESSION["sucesso"] . '</p>';
-                        unset($_SESSION["sucesso"]);
-                    }
-                ?>
+                <?php require("utils/mostra_mensagem.php");?>
             </form>
             <a href="login.php" class="link">Já tenho conta</a>
             <div class="paw">🐶 🐱</div>

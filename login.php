@@ -23,16 +23,7 @@
                 <input type="email" name="email" placeholder="E-mail" required>
                 <input type="password" name="senha" placeholder="Senha" required>
                 <button type="submit">Entrar</button>
-                <?php
-                    if (isset($_SESSION["erro"])) {
-                        echo '<p class="error">' . $_SESSION["erro"] . '</p>';
-                        unset($_SESSION["erro"]);
-                    }
-                    if (isset($_SESSION["sucesso"])) {
-                        echo '<p class="success">' . $_SESSION["sucesso"] . '</p>';
-                        unset($_SESSION["sucesso"]);
-                    }
-                ?>
+                <?php require("utils/mostra_mensagem.php");?>
             </form>
             <a href="registrar.php" class="link">Não tenho conta</a>
             <div class="paw">🐶 🐱</div>

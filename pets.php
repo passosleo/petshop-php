@@ -36,7 +36,7 @@ $result = mysqli_query($conn, $sql);
                     <table class="list-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th style="width: 70px;">ID</th>
                                 <th>Nome</th>
                                 <th>Espécie</th>
                                 <th>Gênero</th>
@@ -71,6 +71,7 @@ $result = mysqli_query($conn, $sql);
                 <?php else: ?>
                     <div class="sem-dados">Nenhum pet cadastrado até o momento.</div>
                 <?php endif; ?>
+                <?php require("utils/mostra_mensagem.php");?>
             </section>
         </main>
     </div>

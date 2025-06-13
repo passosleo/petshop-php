@@ -25,7 +25,7 @@ $result = mysqli_query($conn, $sql);
                     <h1>Espécies</h1>
                     <p>Gerencie as espécies de pets cadastradas.</p>
                 </div>
-                <a href="actions/especies/cadastrar_especie.php" class="add-button">Adicionar</a>
+                <a href="cadastrar_especie.php" class="add-button">Adicionar</a>
             </div>
 
             <section>
@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $sql);
                     <table class="list-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th style="width: 70px;">ID</th>
                                 <th>Nome</th>
                                 <th>Criado em</th>
                                 <th>Atualizado em</th>
@@ -49,17 +49,19 @@ $result = mysqli_query($conn, $sql);
                                     <td><?php echo date('d/m/Y', strtotime($row['atualizado_em'])); ?></td>
                                     <td>
                                         <div class="actions">
-                                            <a href="actions/especies/editar_especie.php?id=<?php echo $row['id_especie']; ?>" class="btn-actions btn-editar">Editar</a>
-                                            <a href="actions/especies/excluir_especie.php?id=<?php echo $row['id_especie']; ?>" class="btn-actions btn-excluir" onclick="return confirm('Deseja realmente excluir esta espécie?');">Excluir</a>
+                                            <a href="editar_especie.php?id=<?php echo $row['id_especie']; ?>" class="btn-actions btn-editar">Editar</a>
+                                            <a href="actions/especies/excluir_especie_action.php?id=<?php echo $row['id_especie']; ?>" class="btn-actions btn-excluir" onclick="return confirm('Deseja realmente excluir esta espécie?');">Excluir</a>
                                         </div>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
                         </tbody>
                     </table>
+                    
                 <?php else: ?>
                     <div class="sem-dados">Nenhuma espécie cadastrada até o momento.</div>
                 <?php endif; ?>
+                <?php require("utils/mostra_mensagem.php");?>
             </section>
         </main>
     </div>
