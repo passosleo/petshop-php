@@ -15,4 +15,6 @@ Simple PHP project using MySQL to create, list, edit, and delete **pets** and **
 - MySQL
 - HTML/CSS/JavaScript
 
+---
+
 🔁 This README is also available in [Brazilian Portuguese](README-pt.md)
