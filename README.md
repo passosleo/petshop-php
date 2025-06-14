@@ -1,15 +1,15 @@
 # 🐶 PetShop - PHP
 
-Projeto simples em PHP com MySQL para cadastro, listagem, edição e exclusão de **pets** e **espécies**.
+Simple PHP project using MySQL to create, list, edit, and delete **pets** and **species**.
 
-## Funcionalidades
+## Features
 
-- Cadastrar, listar, editar e excluir espécies
-- Cadastrar, listar, editar e excluir pets
-- Cadastro de usuários
-- Login simples com sessões
+- Create, list, edit, and delete species
+- Create, list, edit, and delete pets
+- User registration
+- Simple session-based login
 
-## Tecnologias
+## Technologies
 
 - PHP
 - MySQL
