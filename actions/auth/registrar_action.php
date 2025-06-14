@@ -1,35 +1,47 @@
 <?php
-	require("../../db/conexao.php");
-	session_start();
+require("../../db/conexao.php");
+session_start();
 
-	if (!isset($_POST['nome'], $_POST['email'], $_POST['senha'])) {
-		$_SESSION["erro"] = "Parâmetros incorretos";
-		header("location: /registrar.php");
-		exit;
-	}
+if (!isset($_POST['nome'], $_POST['email'], $_POST['senha'])) {
+    $_SESSION["erro"] = "Parâmetros incorretos";
+    header("location: /registrar.php");
+    exit;
+}
 
-	$nome = $_POST["nome"];
-	$email = $_POST["email"];
-	$senha = $_POST["senha"];
+$nome = trim($_POST["nome"]);
+$email = trim($_POST["email"]);
+$senha = $_POST["senha"];
 
-	$sql_email_existe = "SELECT * FROM usuarios WHERE email = '$email'";
-	$resultado = mysqli_query($conn, $sql_email_existe);
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $_SESSION["erro"] = "E-mail inválido";
+    header("location: /registrar.php");
+    exit;
+}
 
-	if (mysqli_num_rows($resultado) > 0) {
-		$_SESSION["erro"] = "E-mail já cadastrado";
-		header("location: /registrar.php");
-		exit;
-	}
+$stmt = $conn->prepare("SELECT id_usuario FROM usuarios WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$resultado = $stmt->get_result();
 
-	$senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+if ($resultado->num_rows > 0) {
+    $_SESSION["erro"] = "E-mail já cadastrado";
+    header("location: /registrar.php");
+    exit;
+}
+$stmt->close();
 
-	$sql_cadastro = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha_hash')";
+$senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-	if (mysqli_query($conn, $sql_cadastro)) {
-		$_SESSION["sucesso"] = "Cadastro realizado com sucesso!";
-		header("location: /login.php");
-	} else {
-		$_SESSION["erro"] = "Erro ao cadastrar usuário";
-		header("location: /registrar.php");
-	}
+$stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $nome, $email, $senha_hash);
+
+if ($stmt->execute()) {
+    $_SESSION["sucesso"] = "Cadastro realizado com sucesso!";
+    header("location: /login.php");
+} else {
+    $_SESSION["erro"] = "Erro ao cadastrar usuário";
+    header("location: /registrar.php");
+}
+
+$stmt->close();
 ?>

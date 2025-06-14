@@ -25,5 +25,5 @@ if (isset($_POST['nome'], $_POST['id_especie'], $_POST['genero'], $_POST['dt_nas
     $_SESSION["erro"] = "Dados incompletos enviados.";
 }
 
-header("Location: /cadastrar_pet.php");
+header("Location: /pets.php");
 exit;

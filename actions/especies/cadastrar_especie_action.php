@@ -29,6 +29,6 @@ if (isset($_POST['nome'])) {
     }
 }
 
-header("Location: /cadastrar_especie.php");
+header("Location: /especies.php");
 exit;
 ?>

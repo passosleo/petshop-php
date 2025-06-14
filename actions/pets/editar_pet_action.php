@@ -27,5 +27,5 @@ if (isset($_POST['id'], $_POST['nome'], $_POST['id_especie'], $_POST['genero'], 
     $_SESSION["erro"] = "Dados inválidos.";
 }
 
-header("Location: /editar_pet.php?id=" . $_POST['id']);
+header("Location: /pets.php");
 exit;
