@@ -28,7 +28,7 @@ $result = mysqli_query($conn, $sql);
                     <h1>Pets</h1>
                     <p>Gerencie os pets cadastrados.</p>
                 </div>
-                <a href="actions/pets/cadastrar_pet.php" class="add-button">Adicionar</a>
+                <a href="/cadastrar_pet.php" class="add-button">Adicionar</a>
             </div>
 
             <section>
@@ -60,8 +60,8 @@ $result = mysqli_query($conn, $sql);
                                     <td><?php echo date('d/m/Y', strtotime($row['atualizado_em'])); ?></td>
                                     <td>
                                         <div class="actions">
-                                            <a href="actions/pets/editar_pet.php?id=<?php echo $row['id_pet']; ?>" class="btn-actions btn-editar">Editar</a>
-                                            <a href="actions/pets/excluir_pet.php?id=<?php echo $row['id_pet']; ?>" class="btn-actions btn-excluir" onclick="return confirm('Deseja realmente excluir este pet?');">Excluir</a>
+                                            <a href="editar_pet.php?id=<?php echo $row['id_pet']; ?>" class="btn-actions btn-editar">Editar</a>
+                                            <a href="actions/pets/excluir_pet_action.php?id=<?php echo $row['id_pet']; ?>" class="btn-actions btn-excluir" onclick="return confirm('Deseja realmente excluir este pet?');">Excluir</a>
                                         </div>
                                     </td>
                                 </tr>

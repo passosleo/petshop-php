@@ -310,7 +310,8 @@ button:hover {
     color: white;
 }
 
-.list-table th, .list-table td {
+.list-table th,
+.list-table td {
     padding: 14px;
     text-align: left;
     font-size: 14px;
@@ -327,4 +328,75 @@ button:hover {
 
 .list-table td {
     color: var(--text-color);
+}
+
+.form-container form {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container label {
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="date"]:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 140, 66, 0.4);
+}
+
+.form-container .radio-group {
+    display: flex;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+.form-container .radio-group label {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-container button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.form-containerbutton:hover {
+    background: var(--button-hover);
 }

@@ -28,8 +28,8 @@
                     <input type="text" id="nome" name="nome" placeholder="Ex: Cachorro" required>
 
                     <button type="submit">Cadastrar</button>
+                    <?php require("utils/mostra_mensagem.php");?>
                 </form>
-                <?php require("utils/mostra_mensagem.php");?>
             </section>
         </main>
     </div>

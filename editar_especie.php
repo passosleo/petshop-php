@@ -53,8 +53,8 @@ $stmt->close();
                     <label for="nome" style="display: block; margin-bottom: 6px; font-weight: bold;">Nome da Espécie</label>
                     <input type="text" id="nome" name="nome" required value="<?php echo htmlspecialchars($especie['nome']); ?>">
                     <button type="submit">Salvar Alterações</button>
+                    <?php require("utils/mostra_mensagem.php");?> 
                 </form>
-                <?php require("utils/mostra_mensagem.php"); ?>
             </section>
         </main>
     </div>
